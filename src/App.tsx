@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { AxiosResponse } from 'axios';
-import { axiosOrigin} from './api/axios-instances';
+import { axiosOrigin } from './api/axios-instances';
 
 function App() {
     const [bitcoinData, setBitcoinData] = useState<AxiosResponse | null | void>(null);
@@ -9,7 +9,9 @@ function App() {
         try {
             const data = await axiosOrigin.get('currentprice.json');
             setBitcoinData(data);
-        } catch (e) {}
+        } catch (e) {
+            window.alert(e);
+        }
     };
 
     useEffect(() => {

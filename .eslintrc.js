@@ -37,7 +37,6 @@ module.exports = {
         'no-else-return': 2,
         'no-useless-catch': 0,
         'react/no-unescaped-entities': 0,
-        // added below two rules because of https://github.com/typescript-eslint/typescript-eslint/issues/1197#issuecomment-581174968
         'no-unused-vars': 'off',
         '@typescript-eslint/no-unused-vars': ['error'],
         '@typescript-eslint/no-empty-interface': [
