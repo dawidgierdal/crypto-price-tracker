@@ -1,25 +1,63 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
+    "module": "esnext",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
     "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
+    "jsx": "react-jsx",
     "noEmit": true,
-    "jsx": "react-jsx"
+    "isolatedModules": true,
+    "strict": true,
+    "strictFunctionTypes": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true
   },
+  "paths": {
+    "api/*": [
+      "src/api/*"
+    ],
+    "assets/*": [
+      "src/assets/*"
+    ],
+    "components/*": [
+      "src/components/*"
+    ],
+    "constants/*": [
+      "src/constants/*"
+    ],
+    "helpers/*": [
+      "src/helpers/*"
+    ],
+    "hooks/*": [
+      "src/hooks/*"
+    ],
+    "locales/*": [
+      "src/locales/*"
+    ],
+    "views/*": [
+      "src/views/*"
+    ],
+    "styles/*": [
+      "src/styles/*"
+    ],
+    "theme/*": [
+      "src/theme/*"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "jest.config.js"
+  ],
   "include": [
     "src"
   ]
