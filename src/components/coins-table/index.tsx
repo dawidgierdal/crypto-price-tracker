@@ -4,7 +4,13 @@ import { Column, useTable } from 'react-table';
 import { CoinResponse } from 'api/axios/coins/types';
 
 export const CoinsTable = () => {
-    const { data } = useMarkets();
+    const { data } = useMarkets({
+        vs_currency: 'usd',
+        order: 'market_cap_desc',
+        per_page: 100,
+        page: 1,
+        sparkline: false,
+    });
 
     const tableData = React.useMemo<CoinResponse[] | undefined>(() => data, [data]) || [];
 
