@@ -1,31 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import { AxiosResponse } from 'axios';
-import { axiosOrigin } from './api/axios-instances';
-import { CoinParams } from './types';
-import { ENDPOINTS } from './api/endpoints';
-import { Coin } from './components/coin';
+import React from 'react';
+import { SwrConfig } from './modules/swr-config';
+import { CoinsTable } from './components/coins-table';
 
 const App = () => {
-    const [coins, setCoins] = useState<AxiosResponse | null | void>(null);
-
-    const getData = async () => {
-        try {
-            const data = await axiosOrigin.get(ENDPOINTS.MARKETS);
-            setCoins(data);
-        } catch (e) {
-            window.alert(e);
-        }
-    };
-
-    useEffect(() => {
-        getData();
-    }, []);
-
-    const { data } = coins || {};
-
-    const coinsToRender = data?.map((coin: CoinParams) => <Coin key={coin.id} coin={coin} />);
-
-    return <div>{coinsToRender}</div>;
+    return (
+        <SwrConfig>
+            <CoinsTable />
+        </SwrConfig>
+    );
 };
 
 export default App;

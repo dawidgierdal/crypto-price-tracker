@@ -1,4 +1,4 @@
-export type CoinParams = {
+export type CoinResponse = {
     id: string;
     symbol: string;
     name: string;
